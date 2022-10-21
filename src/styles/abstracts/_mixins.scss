@@ -1,0 +1,100 @@
+@use '../abstracts/variables';
+@mixin base {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+}
+
+@mixin theme-color($light-theme: true) {
+	@if $light-theme {
+		background: variables.$light-color;
+		color: variables.$dark-color;
+	}
+	@else {
+		background: variables.$dark-color;
+		color: variables.$light-color;
+	}
+}
+
+@mixin theme-card($light-theme: true) {
+	@if $light-theme {
+		background: variables.$light-color;
+		color: variables.$dark-color;
+	}
+	@else {
+		background: variables.$xdark-color;
+		color: variables.$light-color;
+	}
+}
+
+@mixin theme-button($light-theme: true) {
+	@if $light-theme {
+		background-color: variables.$dark-color;
+		color: variables.$light-color;
+	}
+	@else {
+		background-color: variables.$primary-color;
+		color: variables.$light-color;
+		&:hover {
+			background-color: variables.$primary-hover-color;
+		}
+	}
+}
+@mixin transition($var) {
+	transition: $var;
+	-webkit-transition: $var;
+	-moz-transition: $var;
+}
+@mixin border-radius($var) {
+	border-radius: $var;
+	-webkit-border-radius: $var;
+	-moz-border-radius: $var;
+}
+@mixin box-shadow($var) {
+	box-shadow: $var;
+	-webkit-box-shadow: $var;
+	-moz-box-shadow: $var;
+}
+@mixin background-size($var) {
+	-webkit-background-size: $var;
+  -moz-background-size: $var;
+  -o-background-size: $var;
+  background-size: $var;
+}
+@mixin  opacity($var) {
+	$IEValue: $var*100;
+	opacity: $var;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity="+$IEValue+")";
+	filter: alpha(opacity=$IEValue);
+}
+
+@mixin screen-sm {
+	@media (variables.$sm) {
+		@content;
+	}
+}
+@mixin screen-md {
+	@media (variables.$md) {
+		@content;
+	}
+}
+@mixin screen-lg {
+	@media (variables.$lg) {
+		@content;
+	}
+}
+@mixin screen-xl {
+	@media (variables.$xl) {
+		@content;
+	}
+}
+@mixin screen-xxl {
+	@media (variables.$xxl) {
+		@content;
+	}
+}
+@mixin padding($var) {
+    padding: $var;
+}
+@mixin margin($var) {
+    margin: $var;
+}

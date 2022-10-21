@@ -1,0 +1,14 @@
+@use '../../styles/abstracts/mixins';
+.btn {
+    border : none;
+    font-size: 14px;
+    color: white;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    @include mixins.border-radius(5px);
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    &:hover {
+        cursor: pointer;
+    }
+}

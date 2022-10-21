@@ -1,0 +1,21 @@
+@use '../abstracts/mixins';
+@use '../abstracts/functions';
+@use '../components/button';
+
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    @include mixins.base;
+    .main {
+        @include mixins.theme-color($light-theme: true);
+        &.dark {
+            @include mixins.theme-color($light-theme: false);
+        }
+    }
+}
+.container {
+    width: min(90%, 1360px);
+    margin-inline: auto;
+}

@@ -1,0 +1,12 @@
+@use '../../styles/abstracts/mixins';
+
+.hero {
+    @include mixins.padding(5rem 0 5rem 0);
+}
+.hero__title {
+    font-size: 26px;
+    @include mixins.margin(0 0 1rem 0);
+}
+.hero__wrapper > div:first-child {
+    // @include mixins.margin(0 0 5rem 0);
+}

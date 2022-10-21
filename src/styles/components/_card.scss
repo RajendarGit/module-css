@@ -1,0 +1,14 @@
+@use '../abstracts/mixins';
+@use "../abstracts/variables";
+body {
+    .main {
+        .card {
+            @include mixins.theme-card($light-theme: true);
+        }
+        &.dark {
+            .card {
+                @include mixins.theme-card($light-theme: false);
+            }   
+        }
+    }
+}

@@ -1,0 +1,13 @@
+@use '../abstracts/mixins';
+body {
+    .main {
+        .btn-base {
+            @include mixins.theme-button($light-theme: true);
+        }
+        &.dark {
+            .btn-base {
+                @include mixins.theme-button($light-theme: false);
+            }
+        }
+    }
+}
